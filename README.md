@@ -2,7 +2,7 @@
  * @Author: lyu
  * @Date: 2022-08-10 16:57:21
 -->
-<h1 align="center"><samp>Pinia Persist Own</samp></h1>
+<h1 align="center"><samp>Auto Loading Directive</samp></h1>
 
 <p align="center">
   <samp>一个 vue3的 点击事件防重指令</samp>
