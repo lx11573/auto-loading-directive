@@ -1,0 +1,37 @@
+{
+  "name": "auto-loading-directive",
+  "version": "0.0.2",
+  "description": "一个 vue3的 点击事件防重指令",
+  "author": "lyu",
+  "type": "module",
+  "files": [
+    "dist",
+    "README"
+  ],
+  "main": "dist/index.umd.js",
+  "module": "dist/index.es.js",
+  "typings": "dist/index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lx11573/pinia-persist-own.git"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview"
+  },
+  "devDependencies": {
+    "typescript": "^4.7.4",
+    "vite": "^3.0.5",
+    "vite-plugin-dts": "^1.4.1",
+    "vue": "^3.2.37"
+  },
+  "keywords": [
+    "directive",
+    "auto",
+    "loading",
+    "disabled",
+    "vue3"
+  ],
+  "license": "MIT"
+}
