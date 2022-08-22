@@ -13,7 +13,7 @@
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "git+https://gitee.com/lyuming-cn_admin/auto-loading-directive"
+    "url": "git+https://github.com/lx11573/auto-loading-directive"
   },
   "scripts": {
     "dev": "vite",
