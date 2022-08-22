@@ -1,6 +1,6 @@
 {
   "name": "auto-loading-directive",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "一个 vue3的 点击事件防重指令",
   "author": "lyu",
   "type": "module",
