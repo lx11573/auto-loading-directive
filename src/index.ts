@@ -86,8 +86,7 @@ export function autoLoadingDirective(app: App, directiveName = 'auto-loading') {
 
   const autoLoadingDirective: Directive<HTMLElement, ClickFunc> = {
     mounted(el, binding, vnode) {
-      if (!binding.value) return;
-      if (!isFunction(binding.value)) {
+      if (!binding.value || !isFunction(binding.value)) {
         console.error('binding.value is not a function');
         return
       }
