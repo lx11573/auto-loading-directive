@@ -70,7 +70,6 @@ export function autoLoadingDirective(app: App, directiveName = 'auto-loading') {
     const clickFunc: ClickFunc | null = isFunction(binding.value) ? binding.value : null;
 
     if (clickFunc === null) {
-      console.error('binding.value is not a function');
       return;
     }
 
@@ -88,7 +87,10 @@ export function autoLoadingDirective(app: App, directiveName = 'auto-loading') {
   const autoLoadingDirective: Directive<HTMLElement, ClickFunc> = {
     mounted(el, binding, vnode) {
       if (!binding.value) return;
-
+      if (!isFunction(binding.value)) {
+        console.error('binding.value is not a function');
+        return
+      }
       scopedListener = listenerHandler.bind(null, el, binding, vnode);
 
       if (!vnode.ref) {
