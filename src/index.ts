@@ -4,7 +4,7 @@
  */
 
 import type { App, Directive, VNode, DirectiveBinding, ComponentInternalInstance } from 'vue';
-import { isBoolean, isPromise, isFunction } from './utils';
+import { isPromise, isFunction } from './utils';
 
 interface CustomStyle {
   cursor: string;
@@ -72,13 +72,21 @@ export function autoLoadingDirective(app: App, directiveName = 'auto-loading') {
     if (clickFunc === null) {
       return;
     }
-
+    const callback = binding.modifiers['callback']
     const returnValue = clickFunc(e, () => destroy(el, isComponent));
-
-    if (isBoolean(returnValue)) {
-      returnValue && destroy(el, isComponent);
-    } else if (isPromise(returnValue)) {
-      (returnValue as Promise<boolean>).then(val => val && destroy(el, isComponent));
+    if (callback) return
+    if (isPromise(returnValue)) {
+      (returnValue as Promise<boolean>).then(val => {
+        if (val !== false) {
+          destroy(el, isComponent);
+        }
+        return val
+      }).catch((...arg) => {
+          destroy(el, isComponent);
+        Promise.reject(arg)
+      });
+    } else if (returnValue !== false) {
+      destroy(el, isComponent);
     }
   }
 
