@@ -1,6 +1,6 @@
 {
   "name": "auto-loading-directive",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "一个 vue3的 点击事件防重指令",
   "author": "lyu",
   "type": "module",
@@ -11,6 +11,12 @@
   "main": "dist/index.umd.js",
   "module": "dist/index.es.js",
   "typings": "dist/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.umd.js"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/lx11573/auto-loading-directive"

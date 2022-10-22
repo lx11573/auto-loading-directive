@@ -82,7 +82,7 @@ export function autoLoadingDirective(app: App, directiveName = 'auto-loading') {
         }
         return val
       }).catch((...arg) => {
-          destroy(el, isComponent);
+        destroy(el, isComponent);
         Promise.reject(arg)
       });
     } else if (returnValue !== false) {
